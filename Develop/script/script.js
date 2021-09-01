@@ -13,7 +13,6 @@ var numericalChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 // An array that holds all the special characters possible for the password
 var specialChar = ["!", "#", "$", "%", "&", "*", "?", "@"];
 
-//
 function getOptions() {
   // Prompts the user to enter the length of the password they want
   var passwordLength = prompt
@@ -71,7 +70,6 @@ function getOptions() {
   return options;
 }
 
-//
 function getRandomChar(array) {
   // Makes an index that will randomly generate a number that is the size of the array
   var index = Math.floor(Math.random()*array.length);
@@ -83,7 +81,6 @@ function getRandomChar(array) {
   return randomizer;
 }
 
-// Write password to the #password input
 function generatePassword()
 {
   // An array that holds all the user inputted info on what they want on the password
