@@ -21,18 +21,20 @@ function getOptions() {
     "How many characters in your password would you like? It must be an amount in between 8 - 128"
   );
   
-  // Makes sure that what was inputted was a number and if not asks the user to input a number again
-  if (Number.isNaN(passwordLength)) {
-    alert("You did not input a number. Please input a number for the password length");
+  // Makes sure that what was inputted was a number
+  if (isNaN(passwordLength)) {
+    alert("Please input a number for the password length");
     return;
   }
   // Makes sure the password is not less than 8 and if it is asks the user to input a larger number
   if (passwordLength < 8) {
     alert("Password length must be a minimum of 8 charachters");
+    return;
   }
   // Makes sure the password is not greater than 128 and if it is makes the user input a smaller number
   if (passwordLength > 128) {
     alert("Password length must be no greater than 128 characters");
+    return;
   }
   // Asks the user if they want to have lowercase characters
   var hasLowerCase = confirm(
