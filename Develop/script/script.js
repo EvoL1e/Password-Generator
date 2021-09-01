@@ -69,36 +69,63 @@ function getOptions() {
   return options;
 }
 
+//
+function getRandomChar(array) {
+  // Makes an index that will randomly generate a number that is the size of the array
+  var index = Math.floor(Math.random()*array.length);
+  
+  // Uses the randomly generated number from the index to choose a character from the array randomly
+  var randomizer = array[index];
+
+  // Returns the randomized character
+  return randomizer;
+}
+
 // Write password to the #password input
 function generatePassword()
 {
-  // guarantee at least one of each character that is selected for the password option
-  // You need an array for the final password
-  // you need an array for the guarantee characters
-  // you need an array for the possible characters
+  // An array that holds all the user inputted info on what they want on the password
   var options = getOptions();
 
-  //
+  // An array for the final password
   var password = [];
 
-  //
-  var possibleCharacters = [];
+  // An array for the possible characters
+  var possibleChar = [];
 
-  //
-  var guaranteeCharacters = [];
+  // An array for the guaranteed characters
+  var guaranteedChar = [];
 
-  // For every character type selected, you need to concat the existing character arrays into the possible characters array.
-  if (options.hasSpecialCharacters) {
-    possibleCharacters = possibleCharacters.concat(specialcharacters);
-    guaranteeCharacters.push(getRandomChar(specialcharacters));
+  /* Check if the user wanted numbers, uppercase, lowercase, and special characters and generates one character of each type that will be garunteed within the password
+   and appends the rest of the array to the possible characters array that will be used to randomly generate the rest of the password*/
+  if (options.hasSpecialChar) {
+    possibleChar = possibleChar.concat(specialChar);
+    guaranteedChar.push(getRandomChar(specialChar));
   }
-
-  password.concat(guaranteeCharacters);
-  //Array method that will merge all the elements of an array.
-  for (var i = 0; i < options.length - guaranteeCharacters.length; i++) {
-    var characterResult = getRandomChar(possibleCharacters);
-    password.push(characterResult);
+  if (options.hasNumbers) {
+    possibleChar = possibleChar.concat(numericalChar);
+    guaranteedChar.push(getRandomChar(numericalChar));
   }
+  if (options.hasUpperCase) {
+    possibleChar = possibleChar.concat(upperCaseChar);
+    guaranteedChar.push(getRandomChar(upperCaseChar));
+  }
+  if (options.hasLowerCase) {
+    possibleChar = possibleChar.concat(lowerCaseChar);
+    guaranteedChar.push(getRandomChar(lowerCaseChar));
+  }
+  
+  // Appends the garunteed characters that were previously generated to the password that the user will see and turns them into a string
+  password.push(guaranteedChar.join(''));
+
+  // Array method that will merge all the elements of an array.
+  for (var i = 0; i < options.length - guaranteedChar.length; i++) {
+    var charResult = getRandomChar(possibleChar);
+    password.push(charResult);
+  }
+  
+  // Returns the randomized password
+  return password;
 }
 
 function writePassword() 
@@ -110,8 +137,8 @@ function writePassword()
   var passwordText = document.querySelector("#password");
 
   // Places the password within the html for the user to see the generated password
-  passwordText.value = password;
+  passwordText.value = password.join('');
 }
 
-// Add event listener to generate button
+// Add event listener to the button to start generating the password and have it printed on to the screen
 generateBtn.addEventListener("click", writePassword);
