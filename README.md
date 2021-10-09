@@ -22,17 +22,17 @@ If you would like to use the password generator you can go to the link below and
 
 * Images of the functionality of the webpage
 
-![The Password Generator application asking for the length of the password.](imgAssets/pageAskingForCharAmount.PNG)
+![The Password Generator application asking for the length of the password.](Develop/imgAssets/pageAskingForCharAmount.PNG)
 
-![The Password Generator application asking if the user wants lowercase characters in their password](imgAssets/pageAskingForLowerCase.PNG)
+![The Password Generator application asking if the user wants lowercase characters in their password](Develop/imgAssets/pageAskingForLowerCase.PNG)
 
-![The Password Generator application asking if the user wants uppercase characters in their password](imgAssets/pageAskingForUpperCase.PNG)
+![The Password Generator application asking if the user wants uppercase characters in their password](Develop/imgAssets/pageAskingForUpperCase.PNG)
 
-![The Password Generator application asking if the user wants special characters in their password](imgAssets/pageAskingForSpecialChar.PNG)
+![The Password Generator application asking if the user wants special characters in their password](Develop/imgAssets/pageAskingForSpecialChar.PNG)
 
-![The Password Generator application asking if the user wants numbers in their password"](imgAssets/pageAskingForNumber.PNG)
+![The Password Generator application asking if the user wants numbers in their password"](Develop/imgAssets/pageAskingForNumber.PNG)
 
-![The Password Generator application displaying a randomly generated password"](imgAssets/generatedPassword.PNG)
+![The Password Generator application displaying a randomly generated password"](Develop/imgAssets/generatedPassword.PNG)
 
 ## Credits
 
